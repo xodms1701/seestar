@@ -2,26 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+    font-size: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@media (min-width: 1280px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1760px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 2080px) {
+    html {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 2240px) {
+    html {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 2400px) {
+    html {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 2560px) {
+    html {
+        font-size: 34px;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-color: #04041B;
+    color: #E8E8F5;
+}
+
+#rotation-planet {
+    position: absolute;
+    width: 7680px;
+    height: 100%;
+    background: url("../public/bg-star.svg") repeat-x;
+    animation: slide 500s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-3840px); /* The image width */
+    }
+}
+
+img {
+    display: inline-block;
+}
+
+header, footer {
+    background: rgba(29, 29, 44, 0.60);
+}
+
+.default-component {
+    display: flex;
+    padding: 0.875rem 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #1E1E2C;
+}
+
+.item {
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #29293A;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    color: #C4C4D5;
+}
+
+.dropdown {
+    display: flex;
+    height: 2.5rem;
+    padding: 0.25rem 0.75rem;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 0.4375rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #29293A;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dropdown-items {
+    position: absolute;
+    top: 3rem;
+    background: #29293A;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.4375rem;
+}
+
+#weather-table .column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+
+#weather-table .header .column {
+    justify-content: flex-start;
+    padding-left: 0.75rem;
 }
